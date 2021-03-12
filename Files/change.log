@@ -1,3 +1,12 @@
+[0.0.2]
+- Imported Laser, Enemy and Explosion Assets
+- Imported Sounds Assets
+- Added Keyboard and Audio Objects
+- Created Player Movement Behaviour
+- Created Laser Shoot Behaviour
+- Animated Overground
+- Created first Enemy Behaviour
+
 [0.0.1.1]
 - Fixed LICENSE file path
 - Fixed README.md file path

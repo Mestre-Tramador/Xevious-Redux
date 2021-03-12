@@ -2,5 +2,176 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Engine</name>
-    <events />
+    <events>
+        <event-group description="" sid="150552682537451" title="Movement">
+            <sub-events>
+                <event-group description="" sid="574436723244219" title="Forward">
+                    <sub-events>
+                        <event-block sid="612879961087872">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="620684742917615" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="314483458735776" type="Player">
+                                    <param id="0" name="Angle">-90</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="549759806681475">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="708318185562292" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="362756387075163" type="Player">
+                                    <param id="0" name="Angle">-90</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="777065771729703" title="Backward">
+                    <sub-events>
+                        <event-block sid="378687944145969">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="449126067813992" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="792606577014171" type="Player">
+                                    <param id="0" name="Angle">90</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="178094129731617">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="202004069228096" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="526660543698698" type="Player">
+                                    <param id="0" name="Angle">90</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="991059362406110" title="Rightward">
+                    <sub-events>
+                        <event-block sid="861691171946175">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="414160980744903" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="238798808139185" type="Player">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="797256085780099">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="320692557460105" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="483598861852533" type="Player">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="766454176320830" title="Leftward">
+                    <sub-events>
+                        <event-block sid="998982992986695">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="426956677558963" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="640516768885709" type="Player">
+                                    <param id="0" name="Angle">-180</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="245331423861036">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="743668860502209" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="610991390792366" type="Player">
+                                    <param id="0" name="Angle">-180</param>
+                                    <param id="1" name="Distance">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="721407380345720" title="Laser">
+            <sub-events>
+                <event-block sid="258708295793490">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="109892704676691" type="Laser">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="460951941810945" type="Enemy" />
+                        <action id="-9" name="Destroy" sid="868765866774726" type="Laser" />
+                        <action id="0" name="Spawn another object" sid="295807048563150" type="Enemy">
+                            <param id="0" name="Object">Explosion</param>
+                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="968969202731872" type="Audio">
+                            <param id="0" name="Audio file">sfx_explosion</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="440804378447249">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="806231517731334" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="621156363536550" type="Player">
+                            <param id="0" name="Object">Laser</param>
+                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="636437165807222" type="Audio">
+                            <param id="0" name="Audio file">sfx_laser</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
 </c2eventsheet>

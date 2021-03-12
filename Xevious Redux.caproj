@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.1</version>
+    <version>0.0.1.1</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -90,7 +90,5 @@
             <file name="loading-logo.png" />
         </file-folder>
         <file name="change.log" />
-        <file name="LICENSE" />
-        <file name="README.md" />
     </files-folder>
 </c2project>

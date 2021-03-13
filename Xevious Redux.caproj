@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -17,6 +17,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
@@ -71,9 +72,25 @@
         </object-type>
         <object-type name="Player" sid="244037638770884">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="The rate of laser shots firing." name="FireRate" sid="614413953285819" type="number" />
+                <instance-variable comment="The cooldown for laser firing." name="FireCoolDown" sid="749977664269182" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToSpace" sid="468636301806246">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="767787039469338" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.246094" y="0.136719" />
+                            <point x="0.722656" y="0.371094" />
+                            <point x="0.726563" y="0.628906" />
+                            <point x="0.253906" y="0.855469" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -164,6 +181,45 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Asteroid" sid="103015486643463">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="388507684977402" speed="5">
+                    <frame duration="1" hotspotX="0.506494" hotspotY="0.5" original-source="D:\Dudu\Estudo\Faculdade\Fadergs\5º Semestre\Balanceamento de Jogos\Projeto - Space Shooter\Assets\bg_asteroids.png">
+                        <collision-poly>
+                            <point x="0.142857" y="0.148649" />
+                            <point x="0.493506" y="0.0675676" />
+                            <point x="0.805195" y="0.202703" />
+                            <point x="0.948052" y="0.5" />
+                            <point x="0.831169" y="0.824324" />
+                            <point x="0.493506" y="0.986486" />
+                            <point x="0.142857" y="0.851351" />
+                            <point x="0.0649351" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Crosshair" sid="799288782740659">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToPlayer" sid="970011661752499">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="599595553349298" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Dudu\Estudo\Faculdade\Fadergs\5º Semestre\Balanceamento de Jogos\Projeto - Space Shooter\Assets\p_crosshair.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.0294118" />
+                            <point x="1" y="0.5" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0294118" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -171,6 +227,7 @@
     </layout-folder>
     <event-folder>
         <event-sheet>Engine.xml</event-sheet>
+        <event-sheet>Player.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
@@ -195,7 +252,10 @@
         <file name="sfx_laser.m4a" />
         <file name="sfx_laser.ogg" />
     </sounds-folder>
-    <music-folder />
+    <music-folder>
+        <file name="m_areyouready.m4a" />
+        <file name="m_areyouready.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />
@@ -206,5 +266,6 @@
             <file name="loading-logo.png" />
         </file-folder>
         <file name="change.log" />
+        <file name="logo.png" />
     </files-folder>
 </c2project>

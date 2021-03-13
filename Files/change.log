@@ -1,3 +1,12 @@
+[0.0.3]
+- Imported Asteroid, Crosshair and Theme Music Assets.
+- Created an Event Sheet exclusive for the Player.
+- Created Laser Shoot cooldown Behaviour.
+- Created first Crosshair Behaviour.
+- Improved border limits, so the Player does not go outside layout.
+- Added Music Theme.
+- Improved README.md.
+
 [0.0.2]
 - Imported Laser, Enemy and Explosion Assets
 - Imported Sounds Assets

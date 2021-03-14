@@ -4,6 +4,7 @@
     <name>Engine</name>
     <events>
         <include>Player</include>
+        <include>Crosshair</include>
         <event-group description="Controls the general events going on screen" sid="505822986183835" title="Routine">
             <sub-events>
                 <comment>On load, play the music.</comment>
@@ -12,11 +13,11 @@
                         <condition id="-25" name="On loader layout complete" sid="533635881054068" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="956890739909930" type="Audio">
+                        <action id="0" name="Play" sid="507847295850083" type="Audio">
                             <param id="0" name="Audio file">m_areyouready</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">-4</param>
-                            <param id="1" name="Tag (optional)">&quot;Are You Ready?&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;theme&quot;</param>
                         </action>
                     </actions>
                 </event-block>

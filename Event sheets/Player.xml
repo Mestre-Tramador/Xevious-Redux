@@ -9,8 +9,13 @@
                     <sub-events>
                         <event-block sid="717974688004985">
                             <conditions>
-                                <condition id="2" name="Key is down" sid="677038245154995" type="Keyboard">
+                                <condition id="2" name="Key is down" sid="766753815350229" type="Keyboard">
                                     <param id="0" name="Key">38</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="637293372621310" type="Player">
+                                    <param id="0" name="Instance variable">ForwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;W&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -18,9 +23,9 @@
                                     <param id="0" name="Angle">-90</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="775802782907190" type="Crosshair">
-                                    <param id="0" name="Angle">-90</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="534198644796452" type="Player">
+                                    <param id="0" name="Instance variable">ForwardBy</param>
+                                    <param id="1" name="Value">&quot;Up&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -29,15 +34,36 @@
                                 <condition id="2" name="Key is down" sid="695757238695076" type="Keyboard">
                                     <param id="0" name="Key">87</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="611759327021636" type="Player">
+                                    <param id="0" name="Instance variable">ForwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;Up&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-23" name="Move at angle" sid="172722351153449" type="Player">
                                     <param id="0" name="Angle">-90</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="538966678371731" type="Crosshair">
-                                    <param id="0" name="Angle">-90</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="536063651541677" type="Player">
+                                    <param id="0" name="Instance variable">ForwardBy</param>
+                                    <param id="1" name="Value">&quot;W&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="694416539666757">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="575456653254353" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                                <condition id="3" name="On key released" sid="975143533562856" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="851593734713414" type="Player">
+                                    <param id="0" name="Instance variable">ForwardBy</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -50,15 +76,20 @@
                                 <condition id="2" name="Key is down" sid="438586328364920" type="Keyboard">
                                     <param id="0" name="Key">40</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="307978287357766" type="Player">
+                                    <param id="0" name="Instance variable">BackwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;S&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-23" name="Move at angle" sid="643802201570887" type="Player">
                                     <param id="0" name="Angle">90</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="665326772137957" type="Crosshair">
-                                    <param id="0" name="Angle">90</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="914219797203817" type="Player">
+                                    <param id="0" name="Instance variable">BackwardBy</param>
+                                    <param id="1" name="Value">&quot;Down&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -67,15 +98,36 @@
                                 <condition id="2" name="Key is down" sid="315612555519452" type="Keyboard">
                                     <param id="0" name="Key">83</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="237940307675136" type="Player">
+                                    <param id="0" name="Instance variable">BackwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;Down&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-23" name="Move at angle" sid="847625516583939" type="Player">
                                     <param id="0" name="Angle">90</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="342582195943868" type="Crosshair">
-                                    <param id="0" name="Angle">90</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="859323488029469" type="Player">
+                                    <param id="0" name="Instance variable">BackwardBy</param>
+                                    <param id="1" name="Value">&quot;S&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="314587188710125">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="643622603406465" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                                <condition id="3" name="On key released" sid="694723670239532" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="313524308429411" type="Player">
+                                    <param id="0" name="Instance variable">BackwardBy</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -88,15 +140,20 @@
                                 <condition id="2" name="Key is down" sid="805643432857572" type="Keyboard">
                                     <param id="0" name="Key">39</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="176085374672617" type="Player">
+                                    <param id="0" name="Instance variable">RightwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;D&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-23" name="Move at angle" sid="439431095152307" type="Player">
                                     <param id="0" name="Angle">0</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="443191835810570" type="Crosshair">
-                                    <param id="0" name="Angle">0</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="445284484958485" type="Player">
+                                    <param id="0" name="Instance variable">RightwardBy</param>
+                                    <param id="1" name="Value">&quot;Right&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -105,15 +162,36 @@
                                 <condition id="2" name="Key is down" sid="574272157656386" type="Keyboard">
                                     <param id="0" name="Key">68</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="560349857600662" type="Player">
+                                    <param id="0" name="Instance variable">RightwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;Right&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-23" name="Move at angle" sid="258947229502805" type="Player">
                                     <param id="0" name="Angle">0</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="810976981254518" type="Crosshair">
-                                    <param id="0" name="Angle">90</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="356303669607911" type="Player">
+                                    <param id="0" name="Instance variable">RightwardBy</param>
+                                    <param id="1" name="Value">&quot;D&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="656127577747344">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="265264172727597" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                                <condition id="3" name="On key released" sid="271408038981414" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="751000465597197" type="Player">
+                                    <param id="0" name="Instance variable">RightwardBy</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -126,15 +204,20 @@
                                 <condition id="2" name="Key is down" sid="843245969022411" type="Keyboard">
                                     <param id="0" name="Key">37</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="252300360051839" type="Player">
+                                    <param id="0" name="Instance variable">LeftwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;A&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-23" name="Move at angle" sid="672474686360537" type="Player">
                                     <param id="0" name="Angle">-180</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="299554584482634" type="Crosshair">
-                                    <param id="0" name="Angle">-180</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="516336233171829" type="Player">
+                                    <param id="0" name="Instance variable">LeftwardBy</param>
+                                    <param id="1" name="Value">&quot;Left&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -143,15 +226,36 @@
                                 <condition id="2" name="Key is down" sid="451851803718249" type="Keyboard">
                                     <param id="0" name="Key">65</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="137271826198046" type="Player">
+                                    <param id="0" name="Instance variable">LeftwardBy</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-23" name="Move at angle" sid="616315171623469" type="Player">
                                     <param id="0" name="Angle">-180</param>
                                     <param id="1" name="Distance">10</param>
                                 </action>
-                                <action id="-23" name="Move at angle" sid="147925607739737" type="Crosshair">
-                                    <param id="0" name="Angle">-180</param>
-                                    <param id="1" name="Distance">10</param>
+                                <action id="-10" name="Set value" sid="475384102665700" type="Player">
+                                    <param id="0" name="Instance variable">LeftwardBy</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="644914979472466">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="434829811376457" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                                <condition id="3" name="On key released" sid="407678211702337" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="245533102330910" type="Player">
+                                    <param id="0" name="Instance variable">LeftwardBy</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

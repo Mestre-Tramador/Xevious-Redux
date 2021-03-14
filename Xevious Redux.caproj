@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -17,6 +17,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
@@ -75,6 +76,10 @@
             <instance-variables>
                 <instance-variable comment="The rate of laser shots firing." name="FireRate" sid="614413953285819" type="number" />
                 <instance-variable comment="The cooldown for laser firing." name="FireCoolDown" sid="749977664269182" type="number" />
+                <instance-variable comment="The Forward Control of the Player." name="ForwardBy" sid="630152026126154" type="string" />
+                <instance-variable comment="The Backward Control of the Player." name="BackwardBy" sid="699144640089093" type="string" />
+                <instance-variable comment="The Rightward Control of the Player." name="RightwardBy" sid="753592674092762" type="string" />
+                <instance-variable comment="The Leftward Control of the Player." name="LeftwardBy" sid="876869758130476" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="BoundToSpace" sid="468636301806246">
@@ -203,8 +208,8 @@
         <object-type name="Crosshair" sid="799288782740659">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="BoundToPlayer" sid="970011661752499">
-                    <behavior id="bound" />
+                <behavior-type name="Searching" sid="882424630968518">
+                    <behavior id="Rotate" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -228,6 +233,7 @@
     <event-folder>
         <event-sheet>Engine.xml</event-sheet>
         <event-sheet>Player.xml</event-sheet>
+        <event-sheet>Crosshair.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

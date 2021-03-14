@@ -12,6 +12,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout active="1" order="0">Galaxy</layout>
         <event-sheet order="1">Engine</event-sheet>
+        <event-sheet order="2">Player</event-sheet>
+        <event-sheet order="3">Crosshair</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

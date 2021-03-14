@@ -204,9 +204,10 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <behavior-instances>
-                        <behavior-instance type="BoundToPlayer">
+                        <behavior-instance type="Searching">
                             <properties>
-                                <bound-by>Edge</bound-by>
+                                <speed>0</speed>
+                                <acceleration>0</acceleration>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -254,6 +255,10 @@
                     <instance-variables>
                         <FireRate>0.8</FireRate>
                         <FireCoolDown>0</FireCoolDown>
+                        <ForwardBy>&quot;&quot;</ForwardBy>
+                        <BackwardBy>&quot;&quot;</BackwardBy>
+                        <RightwardBy>&quot;&quot;</RightwardBy>
+                        <LeftwardBy>&quot;&quot;</LeftwardBy>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="BoundToSpace">

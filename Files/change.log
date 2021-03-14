@@ -1,3 +1,10 @@
+[0.0.4]
+- Created an Event Sheet exclusive for the Crosshair.
+- Created Crosshair Aim Behaviour.
+- Created Crosshair Searching Behaviour.
+- Fixed Crosshair going outside bounds indefinetively.
+- Fixed Music Theme final seconds strange noises.
+
 [0.0.3]
 - Imported Asteroid, Crosshair and Theme Music Assets.
 - Created an Event Sheet exclusive for the Player.

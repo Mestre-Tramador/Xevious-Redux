@@ -1,3 +1,11 @@
+[0.0.5]
+- Created an Event Sheet exclusive for the Enemies.
+- Created Enemies Spawn Behaviours.
+- Refactored Crosshair Aim Behaviour to focus on nearest Enemy.
+- Created Player Power Up condition.
+- Improved README.md.
+- Fixed License issue.
+
 [0.0.4]
 - Created an Event Sheet exclusive for the Crosshair.
 - Created Crosshair Aim Behaviour.

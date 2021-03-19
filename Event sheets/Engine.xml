@@ -3,11 +3,14 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Engine</name>
     <events>
+        <variable comment="Represent the Unique ID of the Nearest Enemy." constant="0" name="NearEnemyDistanceUID" sid="364008485071798" static="0" type="number">0</variable>
+        <variable comment="The Nearest Enemy&apos;s Distance towards the Player." constant="0" name="NearEnemyDistance" sid="994445585362655" static="0" type="number">0</variable>
         <include>Player</include>
         <include>Crosshair</include>
+        <include>Enemy</include>
         <event-group description="Controls the general events going on screen" sid="505822986183835" title="Routine">
             <sub-events>
-                <comment>On load, play the music.</comment>
+                <comment>On load, play the music. And: </comment>
                 <event-block sid="922147569164592">
                     <conditions>
                         <condition id="-25" name="On loader layout complete" sid="533635881054068" type="System" />
@@ -40,7 +43,86 @@
                             <actions>
                                 <action id="-12" name="Subtract from" sid="493400118448883" type="Player">
                                     <param id="0" name="Instance variable">FireCoolDown</param>
-                                    <param id="1" name="Value">0.1</param>
+                                    <param id="1" name="Value">0.075</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>... resets the firing cooldown if negative.</comment>
+                        <event-block sid="713635466279689">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="987196541272592" type="Player">
+                                    <param id="0" name="Instance variable">FireCoolDown</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="589599574986138" type="Player">
+                                    <param id="0" name="Instance variable">FireCoolDown</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>... for each enemy...</comment>
+                        <event-block sid="133853706394132">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="405587408683043" type="System">
+                                    <param id="0" name="Object">Enemy</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>... if it is the nearest, set its values to Global Variables.</comment>
+                                <event-block sid="433695512440110">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="361568939136231" type="System">
+                                            <param id="0" name="Variable">NearEnemyDistance</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">distance(Player.X, Player.Y, Enemy.X, Enemy.Y)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="455591063020515" type="System">
+                                            <param id="0" name="Variable">NearEnemyDistanceUID</param>
+                                            <param id="1" name="Value">Enemy.UID</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="212403879033233" type="System">
+                                            <param id="0" name="Variable">NearEnemyDistance</param>
+                                            <param id="1" name="Value">distance(Player.X, Player.Y, Enemy.X, Enemy.Y)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>On every seven hundred miliseconds...</comment>
+                <event-block sid="828966011315011">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="779423797668276" type="System">
+                            <param id="0" name="Interval (seconds)">0.7</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>... if there is less than twelve enemies on screen, spawn them.</comment>
+                        <event-block sid="819649872903775">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="379337113268473" type="System">
+                                    <param id="0" name="First value">Enemy.Count</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">12</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="519847341980150" type="System">
+                                    <param id="0" name="Object to create">Enemy</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="X">random(119, 955)</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action behavior="Coming" id="0" name="Set speed" sid="677592683112092" type="Enemy">
+                                    <param id="0" name="Speed">random(500, 1500)</param>
                                 </action>
                             </actions>
                         </event-block>

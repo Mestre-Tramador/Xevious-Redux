@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -11,6 +11,7 @@
     <saved-with-version>27900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
@@ -80,6 +81,7 @@
                 <instance-variable comment="The Backward Control of the Player." name="BackwardBy" sid="699144640089093" type="string" />
                 <instance-variable comment="The Rightward Control of the Player." name="RightwardBy" sid="753592674092762" type="string" />
                 <instance-variable comment="The Leftward Control of the Player." name="LeftwardBy" sid="876869758130476" type="string" />
+                <instance-variable comment="Detemine if it has a Shooting Power Up." name="PowerUp" sid="264048864157333" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="BoundToSpace" sid="468636301806246">
@@ -105,7 +107,7 @@
                 <behavior-type name="Shoot" sid="734485347014395">
                     <behavior id="Bullet" />
                 </behavior-type>
-                <behavior-type name="DestroyOnOut" sid="557919612337163">
+                <behavior-type name="DestroyOnOut" sid="253476270488153">
                     <behavior id="destroy" />
                 </behavior-type>
             </behaviors>
@@ -148,9 +150,15 @@
         </object-type>
         <object-type name="Enemy" sid="703204916747217">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Distance towards the Player." name="Distance" sid="521710240363663" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Coming" sid="560369825651203">
                     <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideSpace" sid="734177269731047">
+                    <behavior id="destroy" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -225,6 +233,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Browser" sid="495860548435878">
+            <plugin id="Browser" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -234,6 +245,7 @@
         <event-sheet>Engine.xml</event-sheet>
         <event-sheet>Player.xml</event-sheet>
         <event-sheet>Crosshair.xml</event-sheet>
+        <event-sheet>Enemy.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
@@ -251,6 +263,7 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
+        <global-instance type="Browser" uid="10" />
     </global-instances>
     <sounds-folder>
         <file name="sfx_explosion.m4a" />
@@ -273,5 +286,6 @@
         </file-folder>
         <file name="change.log" />
         <file name="logo.png" />
+        <file name="bdg.svg" />
     </files-folder>
 </c2project>

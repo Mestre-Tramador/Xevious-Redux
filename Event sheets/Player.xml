@@ -278,23 +278,62 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="499225972266290" type="Player">
-                                    <param id="0" name="Instance variable">FireCoolDown</param>
-                                    <param id="1" name="Value">Self.FireRate</param>
-                                </action>
-                                <action id="0" name="Spawn another object" sid="416651884415818" type="Player">
-                                    <param id="0" name="Object">Laser</param>
-                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="494658406710444" type="Audio">
-                                    <param id="0" name="Audio file">sfx_laser</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-2</param>
-                                    <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="812872755857128">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="260178154692401" type="System">
+                                            <param id="0" name="First value">Laser.Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="474396661396005" type="Player">
+                                            <param id="0" name="Instance variable">PowerUp</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="356029263747598" type="Player">
+                                            <param id="0" name="Instance variable">FireCoolDown</param>
+                                            <param id="1" name="Value">Self.FireRate</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="397301130067702" type="Player">
+                                            <param id="0" name="Object">Laser</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="858882834971327" type="Audio">
+                                            <param id="0" name="Audio file">sfx_laser</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-2</param>
+                                            <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="644567451361373">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="931827009025502" type="Player">
+                                            <param id="0" name="Instance variable">PowerUp</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="499225972266290" type="Player">
+                                            <param id="0" name="Instance variable">FireCoolDown</param>
+                                            <param id="1" name="Value">Self.FireRate</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="416651884415818" type="Player">
+                                            <param id="0" name="Object">Laser</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="494658406710444" type="Audio">
+                                            <param id="0" name="Audio file">sfx_laser</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-2</param>
+                                            <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -315,6 +354,42 @@
                                     <param id="2" name="Image point">0</param>
                                 </action>
                                 <action id="0" name="Play" sid="986639661827667" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="Controls the Defeat Cases of the Player." sid="874851403804440" title="Defeat">
+            <sub-events>
+                <event-group description="Controls the Player&apos;s Defeats by Collision" sid="206408251403431" title="ByCollision">
+                    <sub-events>
+                        <event-block sid="852614937752870">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="333624718221936" type="Player">
+                                    <param id="0" name="Object">Enemy</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="293181541882333" type="Player" />
+                                <action id="-9" name="Destroy" sid="574773770214722" type="Enemy" />
+                                <action id="-9" name="Destroy" sid="385943495417928" type="Crosshair" />
+                                <action id="0" name="Spawn another object" sid="274848507135120" type="Enemy">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="405416883405018" type="Player">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="763114303891937" type="Audio">
                                     <param id="0" name="Audio file">sfx_explosion</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">0</param>

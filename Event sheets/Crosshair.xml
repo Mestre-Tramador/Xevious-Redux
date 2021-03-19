@@ -5,223 +5,43 @@
     <events>
         <event-group description="Controls for the aiming of the Player&apos;s Crosshair." sid="768357646504552" title="Aiming">
             <sub-events>
-                <event-group description="Constrols the searching rotation of the Player&apos;s Crosshair" sid="521834865467959" title="AimSearch">
+                <event-group description="Controls the search of the Player&apos;s Crosshair aiming." sid="237030524937071" title="AimSearch">
                     <sub-events>
-                        <event-block sid="511763000174689">
+                        <event-block sid="402749449574691">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="362069760153950" type="Crosshair">
-                                    <param id="0" name="Object">Enemy</param>
+                                <condition id="-8" name="Compare two values" sid="608876327980797" type="System">
+                                    <param id="0" name="First value">Enemy.Count</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="732764970149167" type="System">
+                                    <param id="0" name="Variable">NearEnemyDistanceUID</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action behavior="Searching" id="0" name="Set speed" sid="793221508629914" type="Crosshair">
-                                    <param id="0" name="Speed">180</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="356542748264950">
-                            <conditions>
-                                <condition id="1" inverted="1" name="Is overlapping another object" sid="320146265720457" type="Crosshair">
-                                    <param id="0" name="Object">Enemy</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Searching" id="0" name="Set speed" sid="894534815087648" type="Crosshair">
-                                    <param id="0" name="Speed">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="Controls for the foward aiming of the Player&apos;s Crosshair." sid="342338404238855" title="AimForward">
-                    <sub-events>
-                        <event-block sid="493104482289789">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="437675070159933" type="Keyboard">
-                                    <param id="0" name="Key">38</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="865241092908015" type="Player">
-                                    <param id="0" name="Instance variable">ForwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;W&quot;</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="907443310887999" type="Player">
-                                    <param id="0" name="Comparison">5</param>
-                                    <param id="1" name="Y co-ordinate">120</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="996188121999813" type="Crosshair">
-                                    <param id="0" name="Angle">-90</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="717335667476423">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="546969111450030" type="Keyboard">
-                                    <param id="0" name="Key">87</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="632153960328663" type="Player">
-                                    <param id="0" name="Instance variable">ForwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;Up&quot;</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="630508658351507" type="Player">
-                                    <param id="0" name="Comparison">5</param>
-                                    <param id="1" name="Y co-ordinate">120</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="819991388170021" type="Crosshair">
-                                    <param id="0" name="Angle">-90</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="Controls for the backward aiming of the Player&apos;s Crosshair." sid="300834742927512" title="AimBackward">
-                    <sub-events>
-                        <event-block sid="150231936485585">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="322788447781922" type="Keyboard">
-                                    <param id="0" name="Key">40</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="569091570821870" type="Player">
-                                    <param id="0" name="Instance variable">BackwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;S&quot;</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="656278855153825" type="Player">
-                                    <param id="0" name="Comparison">3</param>
-                                    <param id="1" name="Y co-ordinate">1800</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="811500274898842" type="Crosshair">
-                                    <param id="0" name="Angle">90</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="629541743977526">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="721971153999798" type="Keyboard">
-                                    <param id="0" name="Key">83</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="361779943934474" type="Player">
-                                    <param id="0" name="Instance variable">BackwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;Down&quot;</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="206716042734801" type="Player">
-                                    <param id="0" name="Comparison">3</param>
-                                    <param id="1" name="Y co-ordinate">1800</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="838070158408347" type="Crosshair">
-                                    <param id="0" name="Angle">90</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="Controls for the rightward aiming of the Player&apos;s Crosshair." sid="682486782135379" title="AimRightward">
-                    <sub-events>
-                        <event-block sid="240491301290030">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="381241528212989" type="Keyboard">
-                                    <param id="0" name="Key">39</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="790511028558204" type="Player">
-                                    <param id="0" name="Instance variable">RightwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;D&quot;</param>
-                                </condition>
-                                <condition id="-1" name="Compare X" sid="897103772467742" type="Player">
-                                    <param id="0" name="Comparison">3</param>
-                                    <param id="1" name="X co-ordinate">955</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="180690481347182" type="Crosshair">
-                                    <param id="0" name="Angle">0</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="774292667546377">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="893948651751142" type="Keyboard">
-                                    <param id="0" name="Key">68</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="846494233830917" type="Player">
-                                    <param id="0" name="Instance variable">RightwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;Right&quot;</param>
-                                </condition>
-                                <condition id="-1" name="Compare X" sid="252319812355497" type="Player">
-                                    <param id="0" name="Comparison">3</param>
-                                    <param id="1" name="X co-ordinate">955</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="682350887805979" type="Crosshair">
-                                    <param id="0" name="Angle">0</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="Controls for the leftward aiming of the Player&apos;s Crosshair." sid="435013010786565" title="AimLeftward">
-                    <sub-events>
-                        <event-block sid="530179540473789">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="359790117604598" type="Keyboard">
-                                    <param id="0" name="Key">37</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="930800342323641" type="Player">
-                                    <param id="0" name="Instance variable">LeftwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;A&quot;</param>
-                                </condition>
-                                <condition id="-1" name="Compare X" sid="160582590087875" type="Player">
-                                    <param id="0" name="Comparison">5</param>
-                                    <param id="1" name="X co-ordinate">119</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="764998808473335" type="Crosshair">
-                                    <param id="0" name="Angle">-180</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="322199799490818">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="717291516418900" type="Keyboard">
-                                    <param id="0" name="Key">65</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="521358481685724" type="Player">
-                                    <param id="0" name="Instance variable">LeftwardBy</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;Left&quot;</param>
-                                </condition>
-                                <condition id="-1" name="Compare X" sid="113470868921660" type="Player">
-                                    <param id="0" name="Comparison">5</param>
-                                    <param id="1" name="X co-ordinate">119</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-23" name="Move at angle" sid="529069826861154" type="Crosshair">
-                                    <param id="0" name="Angle">-180</param>
-                                    <param id="1" name="Distance">10</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="828959103637836">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="921898005283595" type="System">
+                                            <param id="0" name="Object">Enemy</param>
+                                            <param id="1" name="Expression">Enemy.UID</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">NearEnemyDistanceUID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="719634337581492" type="Crosshair">
+                                            <param id="0" name="Object">Enemy</param>
+                                            <param id="1" name="Image point (optional)">0</param>
+                                        </action>
+                                        <action behavior="Searching" id="0" name="Set speed" sid="779185466925090" type="Crosshair">
+                                            <param id="0" name="Speed">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>

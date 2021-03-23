@@ -96,6 +96,35 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>On every one thousand five hundred miliseconds...</comment>
+                <event-block sid="102986772678731">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="959063545829157" type="System">
+                            <param id="0" name="Interval (seconds)">1.5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>... if there is less than 2 asteroids on screen, spawn them.</comment>
+                        <event-block sid="762363656699766">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="511465850343057" type="System">
+                                    <param id="0" name="First value">Asteroid.Count</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="233040403863819" type="System">
+                                    <param id="0" name="Object to create">Asteroid</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="X">random(120, 955)</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <comment>On every seven hundred miliseconds...</comment>
                 <event-block sid="828966011315011">
                     <conditions>

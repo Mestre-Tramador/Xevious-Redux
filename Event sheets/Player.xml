@@ -397,6 +397,28 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="247346801150458">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="485977801435035" type="Player">
+                                    <param id="0" name="Object">Asteroid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="849329393665007" type="Player" />
+                                <action id="-9" name="Destroy" sid="641055323120623" type="Crosshair" />
+                                <action id="0" name="Spawn another object" sid="984731950812440" type="Player">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="886757099175909" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
             </sub-events>

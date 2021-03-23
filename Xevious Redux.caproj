@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -19,6 +19,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
@@ -196,6 +197,20 @@
         </object-type>
         <object-type name="Asteroid" sid="103015486643463">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Incoming" sid="635329237946833">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Movement" sid="755180900726557">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Rotation" sid="287867997845105">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="DestroyOnOut" sid="971125540026350">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="388507684977402" speed="5">
                     <frame duration="1" hotspotX="0.506494" hotspotY="0.5" original-source="D:\Dudu\Estudo\Faculdade\Fadergs\5º Semestre\Balanceamento de Jogos\Projeto - Space Shooter\Assets\bg_asteroids.png">
@@ -287,5 +302,6 @@
         <file name="change.log" />
         <file name="logo.png" />
         <file name="bdg.svg" />
+        <file name="PLOT.md" />
     </files-folder>
 </c2project>

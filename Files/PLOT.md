@@ -12,4 +12,4 @@ Althougth, apparently we are no alone in the space! Watch out for the incoming h
 
 O Xevious é um Programa Espacial para lançar um capitão qualificado em uma aventura pelo espaço. Vários países ao redor do mundo financiaram a construção da poderosa Nave Espacial Xevious, e **você** foi escolhido para pilotá-la! Parabéns!
 
-Apesar de tudo, aparentemente não estamos sozinhos no espaço! Cuidado com a horda de inimigos que se aproxima e desvie dos asteróides enquanto atira nos alienígenas e tenta sobreviver!
+Apesar de tudo, aparentemente não estamos sozinhos no espaço! Cuidado com a horda de inimigos que se aproxima e desvie dos asteroides enquanto atira nos alienígenas e tenta sobreviver!

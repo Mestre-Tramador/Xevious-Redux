@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Shooting</name>
+    <events>
+        <event-group description="Controls the dynamics for the Player&apos;s Laser." sid="689826639132598" title="Laser">
+            <sub-events>
+                <event-group description="Controls the Player&apos;s Laser shooting." sid="329579183084385" title="Laser Shot">
+                    <sub-events>
+                        <event-block sid="200384880070289">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="689764720643157" type="Keyboard">
+                                    <param id="0" name="Key">32</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="817804882987356" type="Player">
+                                    <param id="0" name="Instance variable">FireCoolDown</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="790786123587778">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="765874341895221" type="System">
+                                            <param id="0" name="First value">Laser.Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="135542161717614" type="Player">
+                                            <param id="0" name="Instance variable">PowerUp</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="161453616622402" type="Player">
+                                            <param id="0" name="Instance variable">FireCoolDown</param>
+                                            <param id="1" name="Value">Self.FireRate</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="734610845971814" type="Player">
+                                            <param id="0" name="Object">Laser</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="232049990663666" type="Audio">
+                                            <param id="0" name="Audio file">sfx_laser</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-2</param>
+                                            <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="520220072292181">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="807970667398306" type="Player">
+                                            <param id="0" name="Instance variable">PowerUp</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="841185425839337" type="Player">
+                                            <param id="0" name="Instance variable">FireCoolDown</param>
+                                            <param id="1" name="Value">Self.FireRate</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="839110428701157" type="Player">
+                                            <param id="0" name="Object">Laser</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="313990465375928" type="Audio">
+                                            <param id="0" name="Audio file">sfx_laser</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-2</param>
+                                            <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="Controls the behaviours of the Player&apos;s Laser according to different entities." sid="327072882246519" title="Laser Behaviour">
+                    <sub-events>
+                        <event-block sid="368524819065545">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="194820477910629" type="Laser">
+                                    <param id="0" name="Object">Enemy</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="343113274257473" type="Enemy" />
+                                <action id="-9" name="Destroy" sid="611894136343256" type="Laser" />
+                                <action id="0" name="Spawn another object" sid="645758296091356" type="Enemy">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="865748082231425" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="721266869947336">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="391697728490842" type="Laser">
+                                    <param id="0" name="Object">Asteroid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="693133270714435" type="Laser" />
+                                <action id="0" name="Spawn another object" sid="454528123375992" type="Laser">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Space&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="441239662919186" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;miss&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="Controls the dynamics for the Player&apos;s Bombs." sid="142599632241820" title="Bomb">
+            <sub-events>
+                <event-group description="Controls the Player&apos;s Bombs shooting." sid="636326766811607" title="Bomb Shot">
+                    <sub-events>
+                        <event-block sid="460811627587672">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="837383727025441" type="Keyboard">
+                                    <param id="0" name="Key">16</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="788829976515050" type="Player">
+                                    <param id="0" name="Instance variable">BombCoolDown</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="323441817972792">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="336674656406205" type="System">
+                                            <param id="0" name="First value">Bomb.Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="175203128970595" type="Player">
+                                            <param id="0" name="Instance variable">BombCoolDown</param>
+                                            <param id="1" name="Value">Self.BombRate</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="861975719197962" type="Player">
+                                            <param id="0" name="Object">Bomb</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="200641590146479" type="Audio">
+                                            <param id="0" name="Audio file">sfx_bomb</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;drop&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="Controls the behaviours of the Player&apos;s Bombs acording to different entities." sid="521969860714037" title="Bomb Behaviour">
+                    <sub-events>
+                        <event-block sid="135190573706000">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="353918075127924" type="Bomb">
+                                    <param id="0" name="Object">Enemy</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="653226174640622" type="Enemy" />
+                                <action id="0" name="Spawn another object" sid="412864005505476" type="Enemy">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="379082777396232" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="290982229082420">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="620475289636499" type="Bomb">
+                                    <param id="0" name="Object">Asteroid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="712546557834723" type="Asteroid" />
+                                <action id="-9" name="Destroy" sid="161783098930868" type="Bomb" />
+                                <action id="0" name="Spawn another object" sid="708204092319169" type="Asteroid">
+                                    <param id="0" name="Object">BigExplosion</param>
+                                    <param id="1" name="Layer">&quot;Space&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="770868220165399" type="Audio">
+                                    <param id="0" name="Audio file">sfx_big_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;explosion&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

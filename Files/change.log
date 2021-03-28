@@ -1,3 +1,11 @@
+[0.0.7]
+- Created Penzu for the game project.
+- Created PENZU.md, to sumarize the entries of the Journal.
+- Imported Assets for Bombs and more Explosions, including sounds.
+- Created an Event Sheet exclusive for Shooting.
+- Created behaviour for the Bombs.
+- Improved the Asteroids' behaviour.
+
 [0.0.6]
 - Created the behaviour for the Asteroids.
 - Fixed README.md badge.

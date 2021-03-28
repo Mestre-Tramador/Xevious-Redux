@@ -6,6 +6,7 @@
         <variable comment="Represent the Unique ID of the Nearest Enemy." constant="0" name="NearEnemyDistanceUID" sid="364008485071798" static="0" type="number">0</variable>
         <variable comment="The Nearest Enemy&apos;s Distance towards the Player." constant="0" name="NearEnemyDistance" sid="994445585362655" static="0" type="number">0</variable>
         <include>Player</include>
+        <include>Shooting</include>
         <include>Crosshair</include>
         <include>Enemy</include>
         <event-group description="Controls the general events going on screen" sid="505822986183835" title="Routine">
@@ -59,6 +60,38 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="589599574986138" type="Player">
                                     <param id="0" name="Instance variable">FireCoolDown</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>... subtracts the bombing cooldown of the Player.</comment>
+                        <event-block sid="261418290930837">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="154090841731870" type="Player">
+                                    <param id="0" name="Instance variable">BombCoolDown</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="960561771762306" type="Player">
+                                    <param id="0" name="Instance variable">BombCoolDown</param>
+                                    <param id="1" name="Value">0.015</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>... resets the bombing cooldown if negative.</comment>
+                        <event-block sid="282803636991335">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="494908472197215" type="Player">
+                                    <param id="0" name="Instance variable">BombCoolDown</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="978991354331842" type="Player">
+                                    <param id="0" name="Instance variable">BombCoolDown</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>

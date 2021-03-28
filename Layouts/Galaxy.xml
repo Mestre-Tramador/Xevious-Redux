@@ -153,11 +153,44 @@
                         <x>-100</x>
                         <y>1500</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>180</height>
+                        <width>128</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BigExplosion" uid="13">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-300</x>
+                        <y>1500</y>
+                        <z>0</z>
+                        <width>256</width>
+                        <height>256</height>
+                        <depth>0</depth>
+                        <hotspotX>0.532110095</hotspotX>
+                        <hotspotY>0.504587173</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -191,6 +224,8 @@
                     <instance-variables>
                         <FireRate>0.75</FireRate>
                         <FireCoolDown>0</FireCoolDown>
+                        <BombRate>1.5</BombRate>
+                        <BombCoolDown>0</BombCoolDown>
                         <ForwardBy>&quot;&quot;</ForwardBy>
                         <BackwardBy>&quot;&quot;</BackwardBy>
                         <RightwardBy>&quot;&quot;</RightwardBy>
@@ -292,6 +327,41 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Bomb" uid="12">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Shoot">
+                            <properties>
+                                <speed>1000</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="DestroyOnOut" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-200</x>
+                        <y>1800</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.518518507</hotspotX>
+                        <hotspotY>0.519999981</hotspotY>
+                        <angle>-1.57079649</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -365,11 +435,11 @@
                                 <movement>Horizontal</movement>
                                 <wave>Sine</wave>
                                 <period>5</period>
-                                <period-random>15</period-random>
+                                <period-random>5</period-random>
                                 <period-offset>0</period-offset>
                                 <period-offset-random>0</period-offset-random>
                                 <magnitude>150</magnitude>
-                                <magnitude-random>500</magnitude-random>
+                                <magnitude-random>300</magnitude-random>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="Rotation">

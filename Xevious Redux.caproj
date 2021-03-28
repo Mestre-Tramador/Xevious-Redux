@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -78,6 +78,8 @@
             <instance-variables>
                 <instance-variable comment="The rate of laser shots firing." name="FireRate" sid="614413953285819" type="number" />
                 <instance-variable comment="The cooldown for laser firing." name="FireCoolDown" sid="749977664269182" type="number" />
+                <instance-variable comment="The rate of bombs firing." name="BombRate" sid="668733798114073" type="number" />
+                <instance-variable comment="The cooldown for bomb firing." name="BombCoolDown" sid="316645674510674" type="number" />
                 <instance-variable comment="The Forward Control of the Player." name="ForwardBy" sid="630152026126154" type="string" />
                 <instance-variable comment="The Backward Control of the Player." name="BackwardBy" sid="699144640089093" type="string" />
                 <instance-variable comment="The Rightward Control of the Player." name="RightwardBy" sid="753592674092762" type="string" />
@@ -251,6 +253,52 @@
         <object-type name="Browser" sid="495860548435878">
             <plugin id="Browser" />
         </object-type>
+        <object-type name="Bomb" sid="975994974196003">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Shoot" sid="911059941242702">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOnOut" sid="549942932727912">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="771176299926446" speed="5">
+                    <frame duration="1" hotspotX="0.518519" hotspotY="0.52" original-source="D:\Dudu\Estudo\Faculdade\Fadergs\5º Semestre\Balanceamento de Jogos\Projeto - Space Shooter\Assets\fx_bomb.png">
+                        <collision-poly>
+                            <point x="0.259259" y="0.28" />
+                            <point x="0.481481" y="0.2" />
+                            <point x="0.777778" y="0.24" />
+                            <point x="0.962963" y="0.48" />
+                            <point x="0.777778" y="0.76" />
+                            <point x="0.481481" y="0.84" />
+                            <point x="0.259259" y="0.72" />
+                            <point x="0.0740741" y="0.48" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BigExplosion" sid="817870610044103">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="104523085125064">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="649842765363717" speed="12">
+                    <frame duration="1" hotspotX="0.53211" hotspotY="0.504587" />
+                    <frame duration="1" hotspotX="0.485294" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.618182" hotspotY="0.508197" />
+                    <frame duration="1" hotspotX="0.680556" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.594937" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.475" hotspotY="0.506024" />
+                    <frame duration="1" hotspotX="0.475" hotspotY="0.506024" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -261,6 +309,7 @@
         <event-sheet>Player.xml</event-sheet>
         <event-sheet>Crosshair.xml</event-sheet>
         <event-sheet>Enemy.xml</event-sheet>
+        <event-sheet>Shooting.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
@@ -285,6 +334,10 @@
         <file name="sfx_explosion.ogg" />
         <file name="sfx_laser.m4a" />
         <file name="sfx_laser.ogg" />
+        <file name="sfx_big_explosion.m4a" />
+        <file name="sfx_big_explosion.ogg" />
+        <file name="sfx_bomb.m4a" />
+        <file name="sfx_bomb.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="m_areyouready.m4a" />
@@ -303,5 +356,7 @@
         <file name="logo.png" />
         <file name="bdg.svg" />
         <file name="PLOT.md" />
+        <file name="PENZU.md" />
+        <file name="penzu.png" />
     </files-folder>
 </c2project>

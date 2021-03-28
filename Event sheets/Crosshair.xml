@@ -5,7 +5,7 @@
     <events>
         <event-group description="Controls for the aiming of the Player&apos;s Crosshair." sid="768357646504552" title="Aiming">
             <sub-events>
-                <event-group description="Controls the search of the Player&apos;s Crosshair aiming." sid="237030524937071" title="AimSearch">
+                <event-group description="Controls the search of the Player&apos;s Crosshair aiming." sid="237030524937071" title="Aim Search">
                     <sub-events>
                         <event-block sid="402749449574691">
                             <conditions>

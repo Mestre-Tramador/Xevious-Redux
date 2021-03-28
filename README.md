@@ -6,4 +6,8 @@ Xevius Redux is a pseudo-redux of the classic Space Shooter Xevius using [Scirra
 
 The purpose of this project is purely educational as it does not involve any monetary and/or lucrative way.
 
+[Checkout the plot!](./Files/PLOT.md)
+
+[Read the Penzu Journal!](./Files/PENZU.md)
+
 **Made by Eduardo de Oliveira Rosa.**

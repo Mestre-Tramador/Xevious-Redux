@@ -3,9 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Enemy</name>
     <events>
-        <event-group description="Determines functions to the Enemies spawning." sid="199177056098122" title="EnemySpawning">
+        <event-group description="Determines functions to the Enemies spawning." sid="199177056098122" title="Enemy Spawning">
             <sub-events>
-                <event-group description="Controls when spawned, aka, created." sid="701692878110639" title="EnemyCreation">
+                <event-group description="Controls when spawned, aka, created." sid="701692878110639" title="Enemy Creation">
                     <sub-events>
                         <event-block sid="824048536346544">
                             <conditions>
@@ -30,7 +30,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="Controls when despawned, aka, destroyed." sid="866927983480901" title="EnemyDestruction">
+                <event-group description="Controls when despawned, aka, destroyed." sid="866927983480901" title="Enemy Destruction">
                     <sub-events>
                         <event-block sid="536013746926156">
                             <conditions>

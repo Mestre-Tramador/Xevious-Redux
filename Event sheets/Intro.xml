@@ -63,6 +63,23 @@
                             <param id="1" name="Tag (optional)">SUBTHEME</param>
                         </action>
                         <action id="-9" name="Destroy" sid="956230840502946" type="InstructionsPlay" />
+                        <action behavior="Forwarding" id="5" name="Set enabled" sid="349414815057351" type="PlayerSpaceship">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="267099440699581">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="409262728912727" type="PlayerSpaceship">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">300</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="643781309832890" type="Logo">
+                            <param id="0" name="Object">PlayerSpaceship</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="533862153019041" type="PlayerSpaceship" />
                     </actions>
                 </event-block>
                 <event-block sid="700284408089785">

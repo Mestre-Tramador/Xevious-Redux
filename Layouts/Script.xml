@@ -51,7 +51,7 @@
                     <properties>
                         <text></text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Pixel2D,-48,400,0</font>
+                        <font>Pixel2D,-53,400,0</font>
                         <color>51,204,0</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -62,7 +62,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>150</speed>
+                                <speed>50</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -75,10 +75,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>540</x>
-                        <y>3800</y>
+                        <y>4100</y>
                         <z>0</z>
                         <width>1080</width>
-                        <height>1920</height>
+                        <height>2200</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>1</hotspotY>

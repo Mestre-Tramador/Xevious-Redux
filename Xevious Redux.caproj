@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -377,6 +377,9 @@
                 <behavior-type name="FadeIn" sid="287344990062704">
                     <behavior id="Fade" />
                 </behavior-type>
+                <behavior-type name="Forwarding" sid="831822539700112">
+                    <behavior id="Bullet" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="279508524538197" speed="5">
@@ -484,5 +487,6 @@
         <file name="PLOT.md" />
         <file name="PENZU.md" />
         <file name="penzu.png" />
+        <file name="Pixel2D.ttf" />
     </files-folder>
 </c2project>

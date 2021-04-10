@@ -3,25 +3,35 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Engine</name>
     <events>
-        <variable comment="Represent the Unique ID of the Nearest Enemy." constant="0" name="NearEnemyDistanceUID" sid="364008485071798" static="0" type="number">0</variable>
-        <variable comment="The Nearest Enemy&apos;s Distance towards the Player." constant="0" name="NearEnemyDistance" sid="994445585362655" static="0" type="number">0</variable>
         <include>Player</include>
         <include>Shooting</include>
         <include>Crosshair</include>
         <include>Enemy</include>
         <event-group description="Controls the general events going on screen" sid="505822986183835" title="Routine">
             <sub-events>
-                <comment>On load, play the music. And: </comment>
+                <comment>On load, play the music and set the counters to its initial states. Also: </comment>
                 <event-block sid="922147569164592">
                     <conditions>
-                        <condition id="-25" name="On loader layout complete" sid="533635881054068" type="System" />
+                        <condition id="-2" name="On start of layout" sid="533635881054068" type="System" />
                     </conditions>
                     <actions>
                         <action id="0" name="Play" sid="507847295850083" type="Audio">
                             <param id="0" name="Audio file">m_areyouready</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">-4</param>
-                            <param id="1" name="Tag (optional)">&quot;theme&quot;</param>
+                            <param id="1" name="Tag (optional)">MUSICTHEME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="182295435304376" type="System">
+                            <param id="0" name="Variable">DestroyedAsteroids</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="831727509594220" type="System">
+                            <param id="0" name="Variable">DestroyedEnemies</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="117417116900488" type="System">
+                            <param id="0" name="Variable">DestroyedMarkedEnemies</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -144,8 +154,9 @@
                                 <condition id="-8" name="Compare two values" sid="511465850343057" type="System">
                                     <param id="0" name="First value">Asteroid.Count</param>
                                     <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">2</param>
+                                    <param id="2" name="Second value">5</param>
                                 </condition>
+                                <condition id="-3" name="Is on-screen" sid="862596405368617" type="Player" />
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="233040403863819" type="System">
@@ -175,6 +186,7 @@
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Second value">12</param>
                                 </condition>
+                                <condition id="-3" name="Is on-screen" sid="172181904232995" type="Player" />
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="519847341980150" type="System">

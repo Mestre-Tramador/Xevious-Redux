@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -12,8 +12,11 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -34,6 +37,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -51,6 +55,11 @@
     <object-folder>
         <object-type name="Background" sid="700694415110239">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeInAndOut" sid="682392329620173">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="916033756357713" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Dudu\Estudo\Faculdade\Fadergs\5º Semestre\Balanceamento de Jogos\Projeto - Space Shooter\Assets\bg_space.jpg" />
@@ -65,6 +74,9 @@
                 </behavior-type>
                 <behavior-type name="Return" sid="477554277460337">
                     <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="FadeInAndOut" sid="162634805335776">
+                    <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -141,6 +153,9 @@
                 <behavior-type name="Return" sid="547946553210211">
                     <behavior id="wrap" />
                 </behavior-type>
+                <behavior-type name="FadeInAndOut" sid="984674894250314">
+                    <behavior id="Fade" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="486058276942220" speed="5">
@@ -162,6 +177,9 @@
                 </behavior-type>
                 <behavior-type name="DestroyOutsideSpace" sid="734177269731047">
                     <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="261997217852459">
+                    <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -211,6 +229,9 @@
                 </behavior-type>
                 <behavior-type name="DestroyOnOut" sid="971125540026350">
                     <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="452696925373964">
+                    <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -299,10 +320,100 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Logo" sid="317509478999069">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeIn" sid="574222156772919">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="450352260461227" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501182" original-source="D:\Dudu\Estudo\Faculdade\Fadergs\5º Semestre\Balanceamento de Jogos\Projeto - Space Shooter\Assets\logo.png">
+                        <collision-poly>
+                            <point x="0.134167" y="0.380615" />
+                            <point x="0.5" y="0" />
+                            <point x="0.984167" y="0.0449173" />
+                            <point x="0.979167" y="0.498818" />
+                            <point x="0.941667" y="0.834515" />
+                            <point x="0.5" y="0.891253" />
+                            <point x="0.045" y="0.87234" />
+                            <point x="0.0916667" y="0.498818" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="InstructionsMovement" sid="357846721054216">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="706203950759451">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="InstructionsShooting" sid="591281616240313">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="511837635564033">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="InstructionsPlay" sid="431147942811317">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="998378922518144">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Mouse" sid="203398519010295">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="PlayerSpaceship" sid="153579420409332">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeIn" sid="287344990062704">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="279508524538197" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.246094" y="0.136719" />
+                            <point x="0.722656" y="0.371094" />
+                            <point x="0.726563" y="0.628906" />
+                            <point x="0.253906" y="0.855469" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Orders" sid="198458502956592">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="947000464738067">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Alert" sid="326970909807607">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Initial and base value" name="InitText" sid="312567655991389" type="string" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Function" sid="957222969932075">
+            <plugin id="Function" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Galaxy.xml</layout>
+        <layout>Menu.xml</layout>
+        <layout>Script.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Engine.xml</event-sheet>
@@ -310,6 +421,9 @@
         <event-sheet>Crosshair.xml</event-sheet>
         <event-sheet>Enemy.xml</event-sheet>
         <event-sheet>Shooting.xml</event-sheet>
+        <event-sheet>Intro.xml</event-sheet>
+        <event-sheet>Texting.xml</event-sheet>
+        <event-sheet>Global.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
@@ -328,6 +442,8 @@
             </properties>
         </global-instance>
         <global-instance type="Browser" uid="10" />
+        <global-instance type="Mouse" uid="22" />
+        <global-instance type="Function" uid="25" />
     </global-instances>
     <sounds-folder>
         <file name="sfx_explosion.m4a" />
@@ -338,10 +454,20 @@
         <file name="sfx_big_explosion.ogg" />
         <file name="sfx_bomb.m4a" />
         <file name="sfx_bomb.ogg" />
+        <file name="sfx_areyouready.m4a" />
+        <file name="sfx_areyouready.ogg" />
+        <file name="sfx_typing.m4a" />
+        <file name="sfx_typing.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="m_areyouready.m4a" />
         <file name="m_areyouready.ogg" />
+        <file name="m_aboutthatbass.m4a" />
+        <file name="m_aboutthatbass.ogg" />
+        <file name="m_badguy.m4a" />
+        <file name="m_badguy.ogg" />
+        <file name="m_militaryorders.m4a" />
+        <file name="m_militaryorders.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">

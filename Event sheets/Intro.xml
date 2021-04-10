@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Intro</name>
+    <events>
+        <event-group description="Manages and handle the initialization of the Menu." sid="334392349847080" title="Menu Introduction">
+            <sub-events>
+                <event-block sid="920088778888081">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="521657674645753" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="897841574963885" type="Mouse">
+                            <param id="0" name="Cursor style">7</param>
+                        </action>
+                        <action behavior="FadeInAndOut" id="1" name="Start fade" sid="188676641091403" type="Background" />
+                        <action behavior="FadeInAndOut" id="1" name="Start fade" sid="768530383009181" type="Overground" />
+                        <action behavior="FadeInAndOut" id="1" name="Start fade" sid="760015210131577" type="OvergroundClone" />
+                    </actions>
+                </event-block>
+                <event-block sid="441649114920161">
+                    <conditions>
+                        <condition behavior="FadeInAndOut" id="1" name="On fade-in finished" sid="526638943334940" type="Background" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="139110836576968" type="Audio">
+                            <param id="0" name="Audio file">m_aboutthatbass</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">MUSICTHEME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="739165136777543" type="System">
+                            <param id="0" name="Variable">MenuIsReady</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Control the start of the Game." sid="784367770128139" title="Menu Action">
+            <sub-events>
+                <variable comment="The subtheme music of the Menu." constant="1" name="SUBTHEME" sid="304522514996160" static="0" type="text">subtheme</variable>
+                <event-block sid="953198278516455">
+                    <conditions>
+                        <condition id="7" name="On any key released" sid="831212783618556" type="Keyboard" />
+                        <condition id="-14" name="Compare variable" sid="657087533372483" type="System">
+                            <param id="0" name="Variable">MenuIsReady</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="815748096449638" type="Audio">
+                            <param id="0" name="Tag">SUBTHEME</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Stop" sid="280824508272958" type="Audio">
+                            <param id="0" name="Tag">MUSICTHEME</param>
+                        </action>
+                        <action id="0" name="Play" sid="548908220875902" type="Audio">
+                            <param id="0" name="Audio file">sfx_areyouready</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">SUBTHEME</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="956230840502946" type="InstructionsPlay" />
+                    </actions>
+                </event-block>
+                <event-block sid="700284408089785">
+                    <conditions>
+                        <condition id="0" name="On ended" sid="398963154851218" type="Audio">
+                            <param id="0" name="Tag">SUBTHEME</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="736565662443191" type="System">
+                            <param id="0" name="Layout">Script</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

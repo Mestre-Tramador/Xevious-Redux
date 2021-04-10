@@ -1,3 +1,11 @@
+[0.0.8]
+- Imported Logo Asset.
+- Imported Musics for Menu and Pre-Game Layouts.
+- Created Menu Layout and its Behaviours.
+- Created Pre-Game (Script) Layout and its Behaviours.
+- Improved some Event Sheets with Functions.
+- Improved some Event Sheets with Global Scope Variables.
+
 [0.0.7]
 - Created Penzu for the game project.
 - Created PENZU.md, to sumarize the entries of the Journal.

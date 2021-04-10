@@ -32,20 +32,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="161453616622402" type="Player">
-                                            <param id="0" name="Instance variable">FireCoolDown</param>
-                                            <param id="1" name="Value">Self.FireRate</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="734610845971814" type="Player">
-                                            <param id="0" name="Object">Laser</param>
-                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="232049990663666" type="Audio">
-                                            <param id="0" name="Audio file">sfx_laser</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">-2</param>
-                                            <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
+                                        <action id="0" name="Call function" sid="345772089196529" type="Function">
+                                            <param id="0" name="Name">&quot;PlayerShoot&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -56,20 +45,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="841185425839337" type="Player">
-                                            <param id="0" name="Instance variable">FireCoolDown</param>
-                                            <param id="1" name="Value">Self.FireRate</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="839110428701157" type="Player">
-                                            <param id="0" name="Object">Laser</param>
-                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="313990465375928" type="Audio">
-                                            <param id="0" name="Audio file">sfx_laser</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">-2</param>
-                                            <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
+                                        <action id="0" name="Call function" sid="819277452699740" type="Function">
+                                            <param id="0" name="Name">&quot;PlayerShoot&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -215,6 +193,10 @@
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;explosion&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="843506762790399" type="System">
+                                    <param id="0" name="Variable">DestroyedAsteroids</param>
+                                    <param id="1" name="Value">DestroyedAsteroids+1</param>
                                 </action>
                             </actions>
                         </event-block>

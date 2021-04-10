@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Global</name>
+    <events>
+        <comment>Constants to use as Music Tags.</comment>
+        <variable comment="General theme of a Layout." constant="1" name="MUSICTHEME" sid="821691135936755" static="0" type="text">theme</variable>
+        <comment>Global Variables foor using on different Event sheets.</comment>
+        <variable comment="Count of destroyed asteroids." constant="0" name="DestroyedAsteroids" sid="423679596785448" static="0" type="number">0</variable>
+        <variable comment="Count of destroyed basic enemies." constant="0" name="DestroyedEnemies" sid="818126322480879" static="0" type="number">0</variable>
+        <variable comment="Count of destroyed marked enemies." constant="0" name="DestroyedMarkedEnemies" sid="868065625535056" static="0" type="number">0</variable>
+        <variable comment="Determine if the layout is ready." constant="0" name="MenuIsReady" sid="241836423325385" static="0" type="number">0</variable>
+        <variable comment="The Nearest Enemy&apos;s Distance towards the Player." constant="0" name="NearEnemyDistance" sid="519638070181506" static="0" type="number">0</variable>
+        <variable comment="Represent the Unique ID of the Nearest Enemy." constant="0" name="NearEnemyDistanceUID" sid="267131039742558" static="0" type="number">0</variable>
+    </events>
+</c2eventsheet>

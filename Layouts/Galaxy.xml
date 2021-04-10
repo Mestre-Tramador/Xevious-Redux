@@ -15,7 +15,7 @@
     <layers>
         <layer name="Space" sid="8722530541249526">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>0,0,0</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -36,6 +36,17 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="FadeInAndOut">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>1</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -72,6 +83,15 @@
                         <behavior-instance type="Return">
                             <properties>
                                 <wrap-to>Layout</wrap-to>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="FadeInAndOut">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>1</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -111,6 +131,15 @@
                         <behavior-instance type="Return">
                             <properties>
                                 <wrap-to>Layout</wrap-to>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="FadeInAndOut">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>1</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -311,6 +340,15 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="DestroyOutsideSpace" />
+                        <behavior-instance type="FadeOut">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -449,6 +487,15 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="DestroyOnOut" />
+                        <behavior-instance type="FadeOut">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Texting</name>
+    <events>
+        <event-group description="Represents the Console of the Xevious Spaceship." sid="456038570143803" title="Spaceship Terminal">
+            <sub-events>
+                <variable comment="The typing SFX tag." constant="1" name="SFXTYPE" sid="480275864085364" static="0" type="text">type</variable>
+                <event-group description="The first message on screen is an alert." sid="378853569156533" title="Alert Text">
+                    <sub-events>
+                        <event-block sid="315150305503371">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="971225623630435" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="418654205741129" type="Alert">
+                                    <param id="0" name="Instance variable">InitText</param>
+                                    <param id="1" name="Value">&quot;Commando is typing&quot; &amp; newline &amp; &quot;‏‏‎ ‎&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="802869574490776" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="0" name="Play" sid="661487163405737" type="Audio">
+                                    <param id="0" name="Audio file">sfx_typing</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">SFXTYPE</param>
+                                </action>
+                                <action id="0" name="Set text" sid="538276624278706" type="Alert">
+                                    <param id="0" name="Text">Alert.InitText</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="401247998067133">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="416808979133249" type="System">
+                                    <param id="0" name="Interval (seconds)">0.3</param>
+                                </condition>
+                                <condition id="5" name="Is tag playing" sid="929290265580312" type="Audio">
+                                    <param id="0" name="Tag">SFXTYPE</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="822172889002735" type="Alert">
+                                    <param id="0" name="Text">&quot;.&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="592153303422535">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="503686562981185" type="Alert">
+                                            <param id="0" name="Text to compare">Alert.InitText &amp; &quot;....&quot;</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="279016514106715" type="Alert">
+                                            <param id="0" name="Text">Alert.InitText</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="The second message on screen is a series of ordes." sid="657547817702140" title="Orders Text">
+                    <sub-events>
+                        <event-block sid="102956094055837">
+                            <conditions>
+                                <condition id="0" name="On ended" sid="165569940442278" type="Audio">
+                                    <param id="0" name="Tag">SFXTYPE</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="468316712961371" type="Alert" />
+                                <action id="0" name="Play" sid="328819191040390" type="Audio">
+                                    <param id="0" name="Audio file">m_militaryorders</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">MUSICTHEME</param>
+                                </action>
+                                <action id="0" name="Set text" sid="318520453796398" type="Orders">
+                                    <param id="0" name="Text">&quot;Captain...&quot; &amp; newline &amp; newline &amp; &quot;Now you are under full control of your Xevious Spaceship and have total permission to explore the space.&quot; &amp; newline &amp; &quot;From our statistics, everything is OK&quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="310548471607842" type="Orders">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="653631197343422" type="Orders">
+                                    <param id="0" name="Angle">-90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="423609506971535">
+                            <conditions>
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="599141391167598" type="Orders" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="822526252754066" type="Audio">
+                                    <param id="0" name="Tag">MUSICTHEME</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="915217123790060" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="483140662158577" type="System">
+                                    <param id="0" name="Layout">Galaxy</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

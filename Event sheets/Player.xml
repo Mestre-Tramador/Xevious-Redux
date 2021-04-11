@@ -375,6 +375,17 @@
                                 <action behavior="FadeOut" id="1" name="Start fade" sid="818887777126989" type="Enemy" />
                             </actions>
                         </event-block>
+                        <event-block sid="433207721481358">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="217951861584080" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="992870031318613" type="System">
+                                    <param id="0" name="Layout">Final</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="859208846289014">

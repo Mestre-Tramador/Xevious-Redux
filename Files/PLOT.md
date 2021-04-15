@@ -1,12 +1,12 @@
-![Xevius Redux](./logo.png)
+![Xevious Redux](./logo.png)
 
 ---
 
 ## English
 
-The Xevious is a Space Program to launch a qualified captain in an adventure through the space. Various countries around the world had financiated the construction of the power Xevious Spaceship, and **you** was choose to pilot it! Congratulations!
+The Xevious is a Space Program to launch a qualified captain in an adventure through the space. Various countries around the world had financed the construction of the power Xevious Spaceship, and **you** was choose to pilot it! Congratulations!
 
-Althougth, apparently we are no alone in the space! Watch out for the incoming horde of enemies and dodge the asteroids while you shoot the aliens and try to survive!
+Although, apparently we are no alone in the space! Watch out for the incoming horde of enemies and dodge the asteroids while you shoot the aliens and try to survive!
 
 ## Português Brasileiro
 

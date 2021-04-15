@@ -1,3 +1,9 @@
+# VS Code files.
+.vscode
+
+# Single File Project
+/Build
+
 # Construct 2 User Interface States
 *.uistate.xml
  

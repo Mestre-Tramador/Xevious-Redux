@@ -349,10 +349,6 @@
                         <action id="6" name="Stop" sid="258989998802573" type="Audio">
                             <param id="0" name="Tag">MUSICTHEME</param>
                         </action>
-                        <action id="14" name="Log" sid="382859585813177" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">DestroyedAsteroids&amp;&quot; &quot;&amp;DestroyedEnemies&amp;&quot; &quot;&amp;DestroyedMarkedEnemies</param>
-                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="321346215473764">

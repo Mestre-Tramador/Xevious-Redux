@@ -80,7 +80,7 @@
                                     <param id="1" name="Tag (optional)">MUSICTHEME</param>
                                 </action>
                                 <action id="0" name="Set text" sid="318520453796398" type="Orders">
-                                    <param id="0" name="Text">&quot;Captain...&quot;&amp;newline&amp;newline&amp;&quot;Now you are under full control of your Xevious Spaceship and have total permission to explore the space.&quot;&amp;newline&amp;&quot;From our statistics, everything is going OK, your launch was a success and all the suff of the spaceship seems preserved.&quot;&amp;newline&amp;newline&amp;&quot;As a reminder, the Xevious Spaceship is heavily equiped with Laser Firepower and Bombs. If it is needed for any reason, you are authorized to use it.&quot;&amp;newline&amp;newline&amp;&quot;According to your coordinates and our SETI radar, you are entering a location with moving entities. Our scientists are working to analize what kind of bodies are them, we suspect they are only asteroids, so be carefull when moving through them.&quot;&amp;newline&amp;newline&amp;newline&amp;&quot;One last warning, Captain:&quot;&amp;newline&amp;newline&amp;&quot;If other living, and if sapient, species are found, seek at first an dialogue, but on any harm attempt, preserve your life above everything.&quot;&amp;newline&amp;newline&amp;&quot;Godspeed, Captain!&quot;&amp;newline&amp;&quot;Xevious Commando&quot;</param>
+                                    <param id="0" name="Text">&quot;Captain...&quot;&amp;newline&amp;newline&amp;&quot;Now you are under full control of your Xevious Spaceship and have total permission to explore the space freely at the rim.&quot;&amp;newline&amp;&quot;From our statistics, everything is going OK, your launch was a success and all the suff of the spaceship seems well preserved and fine.&quot;&amp;newline&amp;newline&amp;&quot;As a reminder, the Xevious Spaceship is heavily equiped with Laser Firepower and Bombs. If it is needed for any reason, you are authorized to use it without restrictions.&quot;&amp;newline&amp;newline&amp;&quot;According to your coordinates and our SETI radar, you are entering a location with moving entities. Our scientists are working to analize what kind of bodies are them, we suspect they are only asteroids, so be carefull when moving through them.&quot;&amp;newline&amp;newline&amp;newline&amp;&quot;One last warning, Captain:&quot;&amp;newline&amp;newline&amp;&quot;If other living, and if sapient, species are found, seek at first an dialogue, but on any harm attempt, preserve your life above everything.&quot;&amp;newline&amp;newline&amp;&quot;Godspeed, Captain!&quot;&amp;newline&amp;&quot;Xevious Commando&quot;</param>
                                 </action>
                                 <action behavior="Bullet" id="5" name="Set enabled" sid="310548471607842" type="Orders">
                                     <param id="0" name="State">1</param>
@@ -89,17 +89,74 @@
                                     <param id="0" name="Angle">-90</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="136397149619054">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="985713993200924" type="System">
+                                            <param id="0" name="Variable">HasPlayedOnce</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="642295719391336" type="Info">
+                                            <param id="0" name="Text">&quot;Press Space to skip...&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="423609506971535">
+                        <event-block any="1" sid="423609506971535">
                             <conditions>
                                 <condition id="-3" inverted="1" name="Is on-screen" sid="599141391167598" type="Orders" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="365498298764568" type="Function">
+                                    <param id="0" name="Name">&quot;EndCredits&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="922764910210110">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="740351469384944" type="Keyboard">
+                                    <param id="0" name="Key">32</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="223129743871255" type="System">
+                                    <param id="0" name="Variable">HasPlayedOnce</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="565959872978588" type="Audio">
+                                    <param id="0" name="Tag">SFXTYPE</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="440315960085382" type="Function">
+                                    <param id="0" name="Name">&quot;EndCredits&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="The functions used on both texts." sid="523517749834884" title="Functions Text">
+                    <sub-events>
+                        <event-block sid="981932015248722">
+                            <conditions>
+                                <condition id="0" name="On function" sid="407556604785195" type="Function">
+                                    <param id="0" name="Name">&quot;EndCredits&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="186687257685171" type="Audio">
+                                    <param id="0" name="Tag">SFXTYPE</param>
+                                </action>
                                 <action id="6" name="Stop" sid="822526252754066" type="Audio">
                                     <param id="0" name="Tag">MUSICTHEME</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="915217123790060" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
+                                    <param id="0" name="Seconds">1.5</param>
                                 </action>
                                 <action id="-2" name="Go to layout" sid="483140662158577" type="System">
                                     <param id="0" name="Layout">Galaxy</param>

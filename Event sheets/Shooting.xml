@@ -12,31 +12,38 @@
                                 <condition id="2" name="Key is down" sid="689764720643157" type="Keyboard">
                                     <param id="0" name="Key">32</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="817804882987356" type="Player">
-                                    <param id="0" name="Instance variable">FireCoolDown</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="790786123587778">
+                                <event-block sid="583688998819128">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="765874341895221" type="System">
-                                            <param id="0" name="First value">Laser.Count</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">0</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="135542161717614" type="Player">
-                                            <param id="0" name="Instance variable">PowerUp</param>
+                                        <condition id="-7" name="Compare instance variable" sid="817804882987356" type="Player">
+                                            <param id="0" name="Instance variable">FireCoolDown</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="345772089196529" type="Function">
-                                            <param id="0" name="Name">&quot;PlayerShoot&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="790786123587778">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="765874341895221" type="System">
+                                                    <param id="0" name="First value">Laser.Count</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="135542161717614" type="Player">
+                                                    <param id="0" name="Instance variable">PowerUp</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="345772089196529" type="Function">
+                                                    <param id="0" name="Name">&quot;PlayerShoot&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="520220072292181">
                                     <conditions>
@@ -48,6 +55,13 @@
                                         <action id="0" name="Call function" sid="819277452699740" type="Function">
                                             <param id="0" name="Name">&quot;PlayerShoot&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="821238314891938" type="System">
+                                            <param id="0" name="Seconds">2.0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="619531971205387" type="Player">
+                                            <param id="0" name="Instance variable">PowerUp</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -76,6 +90,36 @@
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="460503927719350" type="System">
+                                    <param id="0" name="Variable">DestroyedEnemies</param>
+                                    <param id="1" name="Value">DestroyedEnemies+1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="844273262336379">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="252502182822732" type="Laser">
+                                    <param id="0" name="Object">EnemyShooter</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="731470043268349" type="EnemyShooter" />
+                                <action id="-9" name="Destroy" sid="613675388068523" type="Laser" />
+                                <action id="0" name="Spawn another object" sid="573514051503791" type="EnemyShooter">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="256275244970828" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="585410573320845" type="System">
+                                    <param id="0" name="Variable">DestroyedEnemies</param>
+                                    <param id="1" name="Value">DestroyedEnemies+1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -172,6 +216,35 @@
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="307070362219672" type="System">
+                                    <param id="0" name="Variable">DestroyedEnemies</param>
+                                    <param id="1" name="Value">DestroyedEnemies+1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="643951869846809">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="673979228845753" type="Bomb">
+                                    <param id="0" name="Object">EnemyShooter</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="892596331662183" type="EnemyShooter" />
+                                <action id="0" name="Spawn another object" sid="902251078404369" type="EnemyShooter">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="612974252928632" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="729637776052266" type="System">
+                                    <param id="0" name="Variable">DestroyedEnemies</param>
+                                    <param id="1" name="Value">DestroyedEnemies+1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="290982229082420">
@@ -199,6 +272,23 @@
                                     <param id="1" name="Value">DestroyedAsteroids+1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="609541249247160">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="554053681934709" type="System">
+                                            <param id="0" name="Variable">DestroyedAsteroids</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="753398799777850" type="System">
+                                            <param id="0" name="Variable">Horde</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>

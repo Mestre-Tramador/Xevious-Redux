@@ -106,6 +106,22 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <comment>... verifies the damage of the Player.</comment>
+                        <event-block sid="392651360337296">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="279568341645913" type="Player">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="495576363891276" type="Function">
+                                    <param id="0" name="Name">&quot;PlayerDestroy&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment>... for each enemy...</comment>
                         <event-block sid="133853706394132">
                             <conditions>
@@ -137,68 +153,158 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>On every one thousand five hundred miliseconds...</comment>
-                <event-block sid="102986772678731">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="959063545829157" type="System">
-                            <param id="0" name="Interval (seconds)">1.5</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <comment>... if there is less than 2 asteroids on screen, spawn them.</comment>
-                        <event-block sid="762363656699766">
+                        <event-block sid="433634700861070">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="511465850343057" type="System">
-                                    <param id="0" name="First value">Asteroid.Count</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">5</param>
+                                <condition id="-11" name="For Each" sid="908447359798192" type="System">
+                                    <param id="0" name="Object">EnemyShooter</param>
                                 </condition>
-                                <condition id="-3" name="Is on-screen" sid="862596405368617" type="Player" />
                             </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="233040403863819" type="System">
-                                    <param id="0" name="Object to create">Asteroid</param>
-                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
-                                    <param id="2" name="X">random(120, 955)</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="401301802997546">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="802541950531247" type="System">
+                                            <param id="0" name="First value">choose(0, 1, 2, 3, 4, 5, 6, 7)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="220536790349768" type="System">
+                                            <param id="0" name="First value">EnemyLaser.Count</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="367000275208533" type="System">
+                                            <param id="0" name="Object to create">EnemyLaser</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="X">EnemyShooter.X</param>
+                                            <param id="3" name="Y">EnemyShooter.Y</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="370185356337233" type="Audio">
+                                            <param id="0" name="Audio file">sfx_laser</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-8</param>
+                                            <param id="1" name="Tag (optional)">&quot;shot&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>On every seven hundred miliseconds...</comment>
-                <event-block sid="828966011315011">
+                <comment>On the Horde 1...</comment>
+                <event-block sid="926703489057609">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="779423797668276" type="System">
-                            <param id="0" name="Interval (seconds)">0.7</param>
+                        <condition id="-14" name="Compare variable" sid="133788272632259" type="System">
+                            <param id="0" name="Variable">Horde</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <comment>... if there is less than twelve enemies on screen, spawn them.</comment>
-                        <event-block sid="819649872903775">
+                        <comment>... and every one thousand five hundred miliseconds...</comment>
+                        <event-block sid="102986772678731">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="379337113268473" type="System">
-                                    <param id="0" name="First value">Enemy.Count</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">12</param>
+                                <condition id="-6" name="Every X seconds" sid="959063545829157" type="System">
+                                    <param id="0" name="Interval (seconds)">1.5</param>
                                 </condition>
-                                <condition id="-3" name="Is on-screen" sid="172181904232995" type="Player" />
                             </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="519847341980150" type="System">
-                                    <param id="0" name="Object to create">Enemy</param>
-                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
-                                    <param id="2" name="X">random(119, 955)</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
-                                <action behavior="Coming" id="0" name="Set speed" sid="677592683112092" type="Enemy">
-                                    <param id="0" name="Speed">random(500, 1500)</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <comment>... if there is less than 5 asteroids on screen, spawn them.</comment>
+                                <event-block sid="762363656699766">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="511465850343057" type="System">
+                                            <param id="0" name="First value">Asteroid.Count</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">5</param>
+                                        </condition>
+                                        <condition id="-3" name="Is on-screen" sid="862596405368617" type="Player" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="233040403863819" type="System">
+                                            <param id="0" name="Object to create">Asteroid</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="X">random(120, 955)</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>On the Horde 2...</comment>
+                <event-block sid="472218610960729">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="850754353385468" type="System">
+                            <param id="0" name="Variable">Horde</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>... and every seven hundred miliseconds...</comment>
+                        <event-block sid="828966011315011">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="779423797668276" type="System">
+                                    <param id="0" name="Interval (seconds)">0.7</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>... if there is less than twelve enemies on screen, spawn them.</comment>
+                                <event-block sid="819649872903775">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="379337113268473" type="System">
+                                            <param id="0" name="First value">Enemy.Count</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">12</param>
+                                        </condition>
+                                        <condition id="-3" name="Is on-screen" sid="172181904232995" type="Player" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="519847341980150" type="System">
+                                            <param id="0" name="Object to create">Enemy</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="X">random(119, 955)</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action behavior="Coming" id="0" name="Set speed" sid="677592683112092" type="Enemy">
+                                            <param id="0" name="Speed">random(500, 1500)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="221658769414865">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="530529136240729" type="System">
+                                            <param id="0" name="Variable">Horde</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="534988430082232" type="System">
+                                            <param id="0" name="First value">EnemyShooter.Count</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                        <condition id="-3" name="Is on-screen" sid="688390357205126" type="Player" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="711752630043022" type="System">
+                                            <param id="0" name="Object to create">EnemyShooter</param>
+                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                            <param id="2" name="X">random(119, 955)</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action behavior="Coming" id="0" name="Set speed" sid="556330898164728" type="EnemyShooter">
+                                            <param id="0" name="Speed">random(500, 1000)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

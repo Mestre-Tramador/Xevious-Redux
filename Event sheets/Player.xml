@@ -267,6 +267,56 @@
             <sub-events>
                 <event-group description="Controls the Player&apos;s Defeats by Collision" sid="206408251403431" title="By Collision">
                     <sub-events>
+                        <event-block sid="888082671891046">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="629269383345380" type="Player">
+                                    <param id="0" name="Object">EnemyShooter</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="328090406217106" type="EnemyShooter" />
+                                <action id="0" name="Spawn another object" sid="660474616432368" type="EnemyShooter">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="306002441273143" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="142512636522777" type="Player">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">Player.Damage+1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="759941007834536">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="136467518604868" type="Player">
+                                    <param id="0" name="Object">EnemyLaser</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="774859875420956" type="EnemyLaser" />
+                                <action id="0" name="Spawn another object" sid="267131460128751" type="EnemyLaser">
+                                    <param id="0" name="Object">Explosion</param>
+                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="163712433029959" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-6</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="512897302053283" type="Player">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">Player.Damage+1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="852614937752870">
                             <conditions>
                                 <condition id="0" name="On collision with another object" sid="333624718221936" type="Player">
@@ -274,15 +324,21 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="688335529296563" type="Function">
-                                    <param id="0" name="Name">&quot;PlayerDestroy&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
                                 <action id="-9" name="Destroy" sid="574773770214722" type="Enemy" />
                                 <action id="0" name="Spawn another object" sid="274848507135120" type="Enemy">
                                     <param id="0" name="Object">Explosion</param>
                                     <param id="1" name="Layer">&quot;Ships&quot;</param>
                                     <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="189792410449936" type="Audio">
+                                    <param id="0" name="Audio file">sfx_explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="129072112195095" type="Player">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">Player.Damage+1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -369,6 +425,16 @@
                             </conditions>
                             <actions>
                                 <action behavior="FadeOut" id="1" name="Start fade" sid="818887777126989" type="Enemy" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="956862536253767">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="210118686080369" type="System">
+                                    <param id="0" name="Object">EnemyShooter</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="FadeOut" id="1" name="Start fade" sid="128450126829687" type="EnemyShooter" />
                             </actions>
                         </event-block>
                         <event-block sid="433207721481358">

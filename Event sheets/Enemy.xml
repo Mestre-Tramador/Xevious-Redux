@@ -28,6 +28,27 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="174320449092077">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="264441046411691" type="EnemyShooter" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="337650026778965">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="126104829131250" type="EnemyShooter">
+                                            <param id="0" name="Object">EnemyShooter</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="526415549403367" type="EnemyShooter">
+                                            <param id="0" name="X">random(0, LayoutWidth)</param>
+                                            <param id="1" name="Y">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="Controls when despawned, aka, destroyed." sid="866927983480901" title="Enemy Destruction">
@@ -36,12 +57,7 @@
                             <conditions>
                                 <condition id="-19" name="On destroyed" sid="390322824462884" type="Enemy" />
                             </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="424223248210293" type="System">
-                                    <param id="0" name="Variable">DestroyedEnemies</param>
-                                    <param id="1" name="Value">DestroyedEnemies+1</param>
-                                </action>
-                            </actions>
+                            <actions />
                             <sub-events>
                                 <event-block sid="970321848395470">
                                     <conditions>
@@ -63,6 +79,55 @@
                                         <action id="-9" name="Set value" sid="805920954928487" type="System">
                                             <param id="0" name="Variable">DestroyedMarkedEnemies</param>
                                             <param id="1" name="Value">DestroyedMarkedEnemies+1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="620032659637932">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="192075138459221" type="Player">
+                                                    <param id="0" name="Instance variable">PowerUp</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="940932891044855" type="System">
+                                                    <param id="0" name="Variable">PowerUpCounter</param>
+                                                    <param id="1" name="Value">PowerUpCounter+1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="660609485707356">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="163901056974502" type="System">
+                                                    <param id="0" name="Variable">PowerUpCounter</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">12</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="163131300230545" type="Player">
+                                                    <param id="0" name="Instance variable">PowerUp</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="897308629312794" type="System">
+                                                    <param id="0" name="Variable">PowerUpCounter</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="665990858268802">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="926293862033461" type="System">
+                                            <param id="0" name="Variable">DestroyedEnemies</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="182926667997290" type="System">
+                                            <param id="0" name="Variable">Horde</param>
+                                            <param id="1" name="Value">2</param>
                                         </action>
                                     </actions>
                                 </event-block>

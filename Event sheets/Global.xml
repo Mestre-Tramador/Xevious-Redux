@@ -9,8 +9,11 @@
         <variable comment="Count of destroyed asteroids." constant="0" name="DestroyedAsteroids" sid="423679596785448" static="0" type="number">0</variable>
         <variable comment="Count of destroyed basic enemies." constant="0" name="DestroyedEnemies" sid="818126322480879" static="0" type="number">0</variable>
         <variable comment="Count of destroyed marked enemies." constant="0" name="DestroyedMarkedEnemies" sid="868065625535056" static="0" type="number">0</variable>
+        <variable comment="Determine if the player has finalized the game at least one time." constant="0" name="HasPlayedOnce" sid="593720997228491" static="0" type="number">0</variable>
+        <variable comment="Defines the current horde of enemies." constant="0" name="Horde" sid="883503003625108" static="0" type="number">0</variable>
         <variable comment="Determine if the layout is ready." constant="0" name="MenuIsReady" sid="241836423325385" static="0" type="number">0</variable>
         <variable comment="The Nearest Enemy&apos;s Distance towards the Player." constant="0" name="NearEnemyDistance" sid="519638070181506" static="0" type="number">0</variable>
         <variable comment="Represent the Unique ID of the Nearest Enemy." constant="0" name="NearEnemyDistanceUID" sid="267131039742558" static="0" type="number">0</variable>
+        <variable comment="Count the number of destroyed marked enemies to the power up." constant="0" name="PowerUpCounter" sid="962442954078887" static="0" type="number">0</variable>
     </events>
 </c2eventsheet>

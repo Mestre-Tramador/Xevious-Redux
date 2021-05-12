@@ -1,3 +1,10 @@
+[0.0.12]
+- Created skipping for the Script Layout (only from a second game onwards).
+- Imported Enemy Shooter and Enemy Laser Assets.
+- Replicated some Events for the new enemy type.
+- Created Horde system (as levels).
+- Implemented Power Up mechanics.
+
 [0.0.11.1]
 - Removed unused log on Event Sheets.
 

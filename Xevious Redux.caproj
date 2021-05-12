@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.11.1</version>
+    <version>0.0.12</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -97,6 +97,7 @@
                 <instance-variable comment="The Rightward Control of the Player." name="RightwardBy" sid="753592674092762" type="string" />
                 <instance-variable comment="The Leftward Control of the Player." name="LeftwardBy" sid="876869758130476" type="string" />
                 <instance-variable comment="Detemine if it has a Shooting Power Up." name="PowerUp" sid="264048864157333" type="boolean" />
+                <instance-variable comment="The suffered damage." name="Damage" sid="753818842207691" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="BoundToSpace" sid="468636301806246">
@@ -419,6 +420,65 @@
                 </behavior-type>
             </behaviors>
         </object-type>
+        <object-type name="Info" sid="778253936443323">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Initial and base value" name="InitText" sid="468441023283919" type="string" />
+            </instance-variables>
+        </object-type>
+        <object-type name="EnemyShooter" sid="106250084334264">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Coming" sid="802346094525463">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideSpace" sid="339523497696293">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="920291463684360">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="275280796472285" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.308594" y="0.359375" />
+                            <point x="0.609375" y="0.40625" />
+                            <point x="0.609375" y="0.578125" />
+                            <point x="0.304688" y="0.644531" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EnemyLaser" sid="147222217002806">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Shoot" sid="562154584610293">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOnOut" sid="729552449039036">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="645538063434786" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="D:\Dudu\Estudo\Faculdade\Fadergs\5º Semestre\Balanceamento de Jogos\Projeto - Space Shooter\Assets\fx_enemy_laser.png">
+                        <collision-poly>
+                            <point x="0.230769" y="0.444444" />
+                            <point x="0.5" y="0.259259" />
+                            <point x="0.826923" y="0.333333" />
+                            <point x="0.923077" y="0.481481" />
+                            <point x="0.826923" y="0.666667" />
+                            <point x="0.5" y="0.777778" />
+                            <point x="0.230769" y="0.555556" />
+                            <point x="0.211538" y="0.481481" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -491,12 +551,20 @@
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
-        <file name="change.log" />
-        <file name="logo.png" />
-        <file name="bdg.svg" />
-        <file name="PLOT.md" />
-        <file name="PENZU.md" />
-        <file name="penzu.png" />
-        <file name="Pixel2D.ttf" />
+        <file-folder name="Docs">
+            <file name="change.log" />
+            <file name="PENZU.md" />
+            <file name="PLOT.md" />
+        </file-folder>
+        <file-folder name="Badges">
+            <file name="bdg.svg" />
+        </file-folder>
+        <file-folder name="Fonts">
+            <file name="Pixel2D.ttf" />
+        </file-folder>
+        <file-folder name="Images">
+            <file name="logo.png" />
+            <file name="penzu.png" />
+        </file-folder>
     </files-folder>
 </c2project>

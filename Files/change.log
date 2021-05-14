@@ -1,3 +1,9 @@
+[0.0.13]
+- Created Horde (level) inform text on Galaxy Layout.
+- Improved Horde system.
+- Improved some Event Sheets with Functions.
+- Fixed Enemy Shooter still shooting after the player death.
+
 [0.0.12]
 - Created skipping for the Script Layout (only from a second game onwards).
 - Imported Enemy Shooter and Enemy Laser Assets.

@@ -381,74 +381,11 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;defeat&quot;</param>
                         </action>
-                        <action behavior="FadeInAndOut" id="2" name="Set fade-in time" sid="736779467776461" type="Background">
-                            <param id="0" name="Fade-in time">0</param>
-                        </action>
-                        <action behavior="FadeInAndOut" id="4" name="Set fade-out time" sid="743955590526629" type="Background">
-                            <param id="0" name="Fade-out time">1</param>
-                        </action>
-                        <action behavior="FadeInAndOut" id="2" name="Set fade-in time" sid="756673643116842" type="Overground">
-                            <param id="0" name="Fade-in time">0</param>
-                        </action>
-                        <action behavior="FadeInAndOut" id="4" name="Set fade-out time" sid="878266459773127" type="Overground">
-                            <param id="0" name="Fade-out time">1</param>
-                        </action>
-                        <action behavior="FadeInAndOut" id="2" name="Set fade-in time" sid="938758232795950" type="OvergroundClone">
-                            <param id="0" name="Fade-in time">0</param>
-                        </action>
-                        <action behavior="FadeInAndOut" id="4" name="Set fade-out time" sid="703753121071660" type="OvergroundClone">
-                            <param id="0" name="Fade-out time">1</param>
-                        </action>
-                        <action behavior="FadeInAndOut" id="1" name="Start fade" sid="881901847060478" type="Background" />
-                        <action behavior="FadeInAndOut" id="1" name="Start fade" sid="385228042397812" type="Overground" />
-                        <action behavior="FadeInAndOut" id="1" name="Start fade" sid="262110804017096" type="OvergroundClone" />
-                        <action id="6" name="Stop" sid="258989998802573" type="Audio">
-                            <param id="0" name="Tag">MUSICTHEME</param>
+                        <action id="0" name="Call function" sid="956589439103759" type="Function">
+                            <param id="0" name="Name">&quot;GoToCredits&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="321346215473764">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="309954520682486" type="System">
-                                    <param id="0" name="Object">Asteroid</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="FadeOut" id="1" name="Start fade" sid="701622325068438" type="Asteroid" />
-                            </actions>
-                        </event-block>
-                        <event-block sid="990278769328018">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="532192657059453" type="System">
-                                    <param id="0" name="Object">Enemy</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="FadeOut" id="1" name="Start fade" sid="818887777126989" type="Enemy" />
-                            </actions>
-                        </event-block>
-                        <event-block sid="956862536253767">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="210118686080369" type="System">
-                                    <param id="0" name="Object">EnemyShooter</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="FadeOut" id="1" name="Start fade" sid="128450126829687" type="EnemyShooter" />
-                            </actions>
-                        </event-block>
-                        <event-block sid="433207721481358">
-                            <conditions />
-                            <actions>
-                                <action id="-16" name="Wait" sid="217951861584080" type="System">
-                                    <param id="0" name="Seconds">3</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="992870031318613" type="System">
-                                    <param id="0" name="Layout">Final</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="859208846289014">
                     <conditions>
@@ -476,5 +413,121 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="497435073773875">
+            <conditions>
+                <condition id="0" name="On function" sid="276538347104525" type="Function">
+                    <param id="0" name="Name">&quot;GoToCredits&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="FadeInAndOut" id="2" name="Set fade-in time" sid="633519424020802" type="Background">
+                    <param id="0" name="Fade-in time">0</param>
+                </action>
+                <action behavior="FadeInAndOut" id="4" name="Set fade-out time" sid="209263078658861" type="Background">
+                    <param id="0" name="Fade-out time">1</param>
+                </action>
+                <action behavior="FadeInAndOut" id="2" name="Set fade-in time" sid="592365946491591" type="Overground">
+                    <param id="0" name="Fade-in time">0</param>
+                </action>
+                <action behavior="FadeInAndOut" id="4" name="Set fade-out time" sid="165230755953302" type="Overground">
+                    <param id="0" name="Fade-out time">1</param>
+                </action>
+                <action behavior="FadeInAndOut" id="2" name="Set fade-in time" sid="992802488985075" type="OvergroundClone">
+                    <param id="0" name="Fade-in time">0</param>
+                </action>
+                <action behavior="FadeInAndOut" id="4" name="Set fade-out time" sid="842900228108524" type="OvergroundClone">
+                    <param id="0" name="Fade-out time">1</param>
+                </action>
+                <action behavior="FadeInAndOut" id="1" name="Start fade" sid="784282734745104" type="Background" />
+                <action behavior="FadeInAndOut" id="1" name="Start fade" sid="265271372114911" type="Overground" />
+                <action behavior="FadeInAndOut" id="1" name="Start fade" sid="826919825450667" type="OvergroundClone" />
+                <action id="6" name="Stop" sid="797742617068039" type="Audio">
+                    <param id="0" name="Tag">MUSICTHEME</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="585978374272502">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="694106077746399" type="System">
+                            <param id="0" name="Object">Asteroid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="FadeOut" id="1" name="Start fade" sid="519935958872965" type="Asteroid" />
+                    </actions>
+                </event-block>
+                <event-block sid="641804947966076">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="279266371784987" type="System">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="FadeOut" id="1" name="Start fade" sid="957479087116607" type="Enemy" />
+                    </actions>
+                </event-block>
+                <event-block sid="760609065316826">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="335490212387263" type="System">
+                            <param id="0" name="Object">EnemyShooter</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="FadeOut" id="1" name="Start fade" sid="288273701177971" type="EnemyShooter" />
+                    </actions>
+                </event-block>
+                <event-block sid="772671686249920">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="339363313876255" type="System">
+                            <param id="0" name="Object">Bomb</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="114008685661867" type="Bomb" />
+                    </actions>
+                </event-block>
+                <event-block sid="570483080722646">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="285168908784449" type="System">
+                            <param id="0" name="Object">BigExplosion</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="950836497685164" type="BigExplosion" />
+                    </actions>
+                </event-block>
+                <event-block sid="681140715236545">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="176098884906682" type="System">
+                            <param id="0" name="Object">EnemyLaser</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="866686209603347" type="EnemyLaser" />
+                    </actions>
+                </event-block>
+                <event-block sid="364284210791735">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="684998733889963" type="System">
+                            <param id="0" name="Object">Laser</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="862212401539214" type="Laser" />
+                    </actions>
+                </event-block>
+                <event-block sid="229947357921872">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="282727942984457" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="971350783252678" type="System">
+                            <param id="0" name="Layout">Final</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

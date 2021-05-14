@@ -2,7 +2,7 @@
 <c2project>
     <name>Xevious Redux</name>
     <description>Redux of the classic Space Shooter Xevious</description>
-    <version>0.0.12</version>
+    <version>0.0.13</version>
     <author>Mestre Tramador</author>
     <author-email></author-email>
     <author-website>https://github.com/Mestre-Tramador</author-website>
@@ -478,6 +478,14 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="Level" sid="283766739641542">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="698935679297249">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
         </object-type>
     </object-folder>
     <families />

@@ -33,6 +33,14 @@
                             <param id="0" name="Variable">DestroyedMarkedEnemies</param>
                             <param id="1" name="Value">0</param>
                         </action>
+                        <action id="-9" name="Set value" sid="776641846537476" type="System">
+                            <param id="0" name="Variable">Horde</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="492989493777462" type="Function">
+                            <param id="0" name="Name">&quot;SetLevelInfo&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Asteroids Zone!&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>On every tick...</comment>
@@ -112,7 +120,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="279568341645913" type="Player">
                                     <param id="0" name="Instance variable">Damage</param>
                                     <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">5</param>
+                                    <param id="2" name="Value">10</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -153,6 +161,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <comment>... for each enemy shooter...</comment>
                         <event-block sid="433634700861070">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="908447359798192" type="System">
@@ -171,8 +180,9 @@
                                         <condition id="-8" name="Compare two values" sid="220536790349768" type="System">
                                             <param id="0" name="First value">EnemyLaser.Count</param>
                                             <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Second value">4</param>
+                                            <param id="2" name="Second value">3</param>
                                         </condition>
+                                        <condition id="-3" name="Is on-screen" sid="567794564869928" type="Player" />
                                     </conditions>
                                     <actions>
                                         <action id="-3" name="Create object" sid="367000275208533" type="System">
@@ -236,7 +246,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>On the Horde 2...</comment>
+                <comment>On the Horde 1...</comment>
                 <event-block sid="472218610960729">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="850754353385468" type="System">
@@ -278,6 +288,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <comment>... and on the Horde 2...</comment>
                                 <event-block sid="221658769414865">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="530529136240729" type="System">
@@ -285,24 +296,53 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-8" name="Compare two values" sid="534988430082232" type="System">
-                                            <param id="0" name="First value">EnemyShooter.Count</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Second value">4</param>
-                                        </condition>
                                         <condition id="-3" name="Is on-screen" sid="688390357205126" type="Player" />
                                     </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="711752630043022" type="System">
-                                            <param id="0" name="Object to create">EnemyShooter</param>
-                                            <param id="1" name="Layer">&quot;Ships&quot;</param>
-                                            <param id="2" name="X">random(119, 955)</param>
-                                            <param id="3" name="Y">0</param>
-                                        </action>
-                                        <action behavior="Coming" id="0" name="Set speed" sid="556330898164728" type="EnemyShooter">
-                                            <param id="0" name="Speed">random(500, 1000)</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="944543788053348">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="534988430082232" type="System">
+                                                    <param id="0" name="First value">EnemyShooter.Count</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Second value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="711752630043022" type="System">
+                                                    <param id="0" name="Object to create">EnemyShooter</param>
+                                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                                    <param id="2" name="X">random(119, 955)</param>
+                                                    <param id="3" name="Y">0</param>
+                                                </action>
+                                                <action behavior="Coming" id="0" name="Set speed" sid="556330898164728" type="EnemyShooter">
+                                                    <param id="0" name="Speed">random(500, 1000)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="172869699018345">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="369215332886366" type="System">
+                                                    <param id="0" name="First value">Asteroid.Count</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Second value">2</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="508468179865918" type="System">
+                                                    <param id="0" name="Variable">DestroyedEnemies</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">35</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="658317838301927" type="System">
+                                                    <param id="0" name="Object to create">Asteroid</param>
+                                                    <param id="1" name="Layer">&quot;Ships&quot;</param>
+                                                    <param id="2" name="X">random(120, 955)</param>
+                                                    <param id="3" name="Y">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -310,5 +350,18 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="242410526228875">
+            <conditions>
+                <condition id="0" name="On function" sid="755213547142547" type="Function">
+                    <param id="0" name="Name">&quot;SetLevelInfo&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="992960827710996" type="Level">
+                    <param id="0" name="Text">Function.Param(0)</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" sid="526442404181198" type="Level" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

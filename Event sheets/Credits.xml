@@ -31,25 +31,25 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">MUSICTHEME</param>
                         </action>
-                        <action id="0" name="Call function" sid="989719201992390" type="Function">
+                        <action id="0" name="Call function" sid="602954373018941" type="Function">
                             <param id="0" name="Name">&quot;SwitchCredits&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;Even with this impact,&quot;&amp;newline&amp;&quot;you manage to escape in a capsule successfully.&quot;&amp;newline&amp;newline&amp;&quot;Although, you have recovered the black box of the spaceship,&quot;&amp;newline&amp;&quot;and there was a registry...&quot;</param>
                         </action>
-                        <action id="-16" name="Wait" sid="537393244416316" type="System">
+                        <action id="-16" name="Wait" sid="152659423034609" type="System">
                             <param id="0" name="Seconds">18</param>
                         </action>
-                        <action id="0" name="Call function" sid="292458922741691" type="Function">
+                        <action id="0" name="Call function" sid="594595079125958" type="Function">
                             <param id="0" name="Name">&quot;SwitchCredits&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;You have destroyed &quot;&amp;DestroyedEnemies&amp;&quot; enemies.&quot;&amp;newline&amp;newline&amp;&quot;You have destroyed &quot;&amp;DestroyedMarkedEnemies&amp;&quot; marked enemies.&quot;&amp;newline&amp;newline&amp;&quot;You have destroyed &quot;&amp;DestroyedAsteroids&amp;&quot; asteroids.&quot;</param>
                         </action>
-                        <action id="-16" name="Wait" sid="398179769056651" type="System">
+                        <action id="-16" name="Wait" sid="178577326625187" type="System">
                             <param id="0" name="Seconds">18</param>
                         </action>
-                        <action id="0" name="Call function" sid="468422036904927" type="Function">
+                        <action id="0" name="Call function" sid="328092131189701" type="Function">
                             <param id="0" name="Name">&quot;SwitchCredits&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;Thanks for playing!&quot;{###}1</param>
                         </action>
-                        <action id="-9" name="Set value" sid="586789542337592" type="System">
+                        <action id="-9" name="Set value" sid="809035817281730" type="System">
                             <param id="0" name="Variable">MenuIsReady</param>
                             <param id="1" name="Value">1</param>
                         </action>
